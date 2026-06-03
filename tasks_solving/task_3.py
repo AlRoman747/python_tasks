@@ -8,9 +8,9 @@ class RewindableStream:
             raise ValueError(f"capacity should be > 0")
 
         self._source: Iterator[Any] = iter(source)
-        self._capacity: int = capacity
+        self._capacity = capacity
         self._history: deque[Any] = deque(maxlen=capacity)
-        self._rewind_debt: int = 0
+        self._rewind_debt = 0
 
     def __iter__(self) -> "RewindableStream":
         """Поток сам является итератором."""
