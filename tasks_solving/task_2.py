@@ -22,4 +22,4 @@ class cached_method:
         instance.__dict__.pop(self.cache_name, None)
 
     def __repr__(self) -> str:
-        return f"<cached_method {self._func.__qualname__!r}>"
+        return f"<cached_method {self.func.__qualname__!r}>"
