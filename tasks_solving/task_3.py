@@ -13,7 +13,7 @@ class RewindableStream:
         self._rewind_debt = 0
 
     def __iter__(self) -> "RewindableStream":
-        """Поток сам является итератором."""
+        """Поток сам является итератором"""
         return self
 
     def __next__(self) -> Any:
@@ -34,5 +34,5 @@ class RewindableStream:
 
         available = len(self._history) - self._rewind_debt
         if steps > available:
-            raise ValueError(f"Cannot rewind {steps} steps: only {available}")
+            raise ValueError(f"Cannot rewind {steps}")
         self._rewind_debt += steps
